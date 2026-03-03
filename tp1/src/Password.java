@@ -69,8 +69,36 @@ public class Password {
     public static boolean isStrongPassword(String password) {
 
         // Code here
-
+        // 12 characters
+        if (password.length() < 12) {
+            System.out.println("Pas assez long (12 caractères minimum");
+            return false;
+        }
+        int nbUpper = 0;
+        int nbLower = 0;
+        int nbDigit = 0;
+        for (int i = 0; i < password.length(); i++) {
+            char character = password.charAt(i);
+            if (Character.isUpperCase(character)) {
+                nbUpper = nbUpper + 1;
+            }
+            if (Character.isLowerCase(character)) {
+                nbLower = nbLower + 1;
+            }
+            if (Character.isDigit(character)) {
+                nbDigit = nbDigit + 1;
+            }
+            if (Character.isWhitespace(character)) {
+                System.out.println("Contient un ou plusieurs Whitespace");
+                return false;
+            }
+        }
+        if (nbLower != 0 && nbUpper != 0 && nbDigit != 0) {
+            return true;
+        }
+        System.out.println("Le mdp doit contenir au moins une majuscule, une minuscule, et un chiffre");
         return false;
+
     }
 
     /**
