@@ -19,7 +19,7 @@ class ElevatorTest{
 
     /*
     * Initialise un nouvel ascenseur 
-    avec une capacité de 5 avant chaque test
+    avec une capacité de 3 avant chaque test et 3 personnes 
     */ 
 
     @BeforeEach
@@ -33,7 +33,7 @@ class ElevatorTest{
     
     /* 
      * Teste la fonction isFull vérifie que 
-     l'ascenseur est pas remplie quand il est vide 
+     l'ascenseur n'est pas remplie quand il est vide 
      et qu'il est plein une fois qu'il atteint sa capacité maximum
      */
 
@@ -59,7 +59,7 @@ class ElevatorTest{
         //When
         elevator.addDestination(3);
         //Then
-        assertEquals(1, elevator.getDestinations().size());
-        assertTrue(elevator.getDestinations().contains(3));
+        assertEquals(1, elevator.getDestinationQueueStr().length());
+        assertTrue(elevator.getDestinationQueueStr().contains("3"));
     }
 }

@@ -46,7 +46,7 @@ public class Person {
      */
     private int generateTargetFloor() {
         final int floorNumber = Config.getInt("hotel.floors.number");
-        ArrayList<Integer> allFloors = new ArrayList<>(null);
+        ArrayList<Integer> allFloors = new ArrayList<>();
         for (int i = 0; i < floorNumber; i++){
             allFloors.add(i);
         }
