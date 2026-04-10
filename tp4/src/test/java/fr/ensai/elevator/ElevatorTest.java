@@ -4,13 +4,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ElevatorTest{
     
     private Elevator elevator;
-    private Person person;
+    private Person person1;
+    private Person person2; 
+    private Person person3;
+    final int elevatorCapacity = Config.getInt("hotel.elevator.capacity");
 
     /*
     * Initialise un nouvel ascenseur 
@@ -19,8 +24,12 @@ class ElevatorTest{
 
     @BeforeEach
         void setUp() {
-            elevator = new Elevator(id = 1, startFloor = 0, capacity = 5);
-    }
+            elevator = new Elevator( 1, 0, 3);
+            person1 = new Person(0);
+            person2 = new Person(0);
+            person3 = new Person(2);
+        }
+    
     
     /* 
      * Teste la fonction isFull vérifie que 
@@ -29,13 +38,11 @@ class ElevatorTest{
      */
 
     @Test
-    void test_remplissage_IsFull(){
+    void testremplissageIsFull(){
         //Given
         assertFalse(elevator.isFull());
         //When
-        for (int i = 0; i < elevator.getCapacity(); i++){
-            elevator.spawnPerson(new Person(0, 1));
-        }
+        elevator.spawnPassengers(List.of(person1, person2, person3));
         //Then
         assertTrue(elevator.isFull());
     }
