@@ -70,14 +70,32 @@ public class Floor {
     }
 
     /**
-     * Press the button to call the first elevator.
-     * Requests the first elevator to stop at this floor.
+     * Press the button to call an elevator. 
+     * Checks if an elevator is already on ts way : if so, does nothing.
+     * Otherwise, requests the least busy elevator to stop at this floor.
      * 
      * @param elevators the list of elevators available in the hotel
      */
     public void requestElevator(List<Elevator> elevators) {
-        elevators.get(0).addDestination(this.number);
-    }
+        boolean onItsWay = false;
+        for(Elevator elevator : elevators){
+            while (!onItsWay){
+                onItsWay = elevator.containDestination(this.number);
+            }
+            if (onItsWay) {
+                break;
+            }
+        }
+        if (!onItsWay) {
+            Elevator toChoose = elevators.get(0);
+            for (Elevator elevator : elevators){
+                if (elevator.getDestinationQueueSize() < toChoose.getDestinationQueueSize()){
+                    toChoose = elevator;
+                }
+            }
+            elevators.get(toChoose.getId()).addDestination(this.number);
+            }
+        }
 
     /**
      * Displays the current status of this floor in the console, including

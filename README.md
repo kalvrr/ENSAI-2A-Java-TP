@@ -15,8 +15,8 @@ ajout d'un Config.getInt pour récupérer le nombre d'étages
 implémentation de isFull() dans Elevator.java, et utilisation de la nouvelle méthode dans loadPassengers
 
 ### 2.2 : Request an elevator
-##### 2.2.1 : 
-modification de la probabilité dans application.yml
+
+
 #####
 #####
 #####
