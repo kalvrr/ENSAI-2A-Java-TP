@@ -26,10 +26,13 @@ Modification de la méthode generateTargetFloor() dans Person.java : on sélecti
 Il est difficile de tester la méthode isFull() car la capacité de l'ascenceur est modulable. SI on augmente la capacité de l'ascenceur, il peut être difficile de tester le cas 'true', car il faudrait instancier un grand nombre de Personnes pour tester ce cas, personnes qui doivent avoir un étage de départ. Le test, une fois écrit, ne s'adapte pas à la capacité modulable de l'ascenceur.
 
 ##### 2.4.2 :
+réalisation d'un teste pour la fonction isFull : 
+vérifie que l'ascenseur n'est pas remplie quand il est vide et qu'il est plein une fois qu'il atteint sa capacité maximum
 
 ##### 2.4.3 :
 
-
+Teste la fonction addDestination : 
+vérifie que l'ascenseur ajoute correctement une nouvelle destination
 
 
 ### 2.5 : Crazy Elevator
