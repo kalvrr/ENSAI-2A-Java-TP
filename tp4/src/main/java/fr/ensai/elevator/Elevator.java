@@ -20,12 +20,6 @@ public class Elevator {
 
     public static final Logger logger = LogManager.getLogger(Elevator.class);
 
-    public enum Direction {
-        UP,
-        DOWN,
-        IDLE
-    }
-
     protected int id;
     protected int capacity;
     protected int currentFloor;
@@ -57,6 +51,10 @@ public class Elevator {
 
     public int getCurrentFloor() {
         return this.currentFloor;
+    }
+
+    public Direction getDirection() {
+        return this.direction;
     }
 
     /**

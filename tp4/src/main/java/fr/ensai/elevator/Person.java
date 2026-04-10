@@ -7,11 +7,6 @@ import java.util.Random;
  * Represents a person in the hotel elevator simulation.
  */
 public class Person {
-    public enum Direction {
-        UP,
-        DOWN,
-        IDLE
-    }
 
     private String nickname;
     private int startFloor;
@@ -32,7 +27,11 @@ public class Person {
         this.nickname = Person.generateNickname();
         this.startFloor = startFloor;
         this.targetFloor = this.generateTargetFloor();
-        this.direction = Direction.IDLE;
+        if (this.targetFloor > this.startFloor) {
+            this.direction = Direction.UP;
+        } else {
+            this.direction = Direction.DOWN;
+        }
     }
 
     /**
@@ -72,6 +71,10 @@ public class Person {
 
     public int getTargetFloor() {
         return this.targetFloor;
+    }
+
+    public Direction getDirection() {
+        return this.direction;
     }
 
     @Override

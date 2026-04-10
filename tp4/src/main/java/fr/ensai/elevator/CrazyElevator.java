@@ -36,7 +36,19 @@ public class CrazyElevator extends Elevator {
         }
         // normal behaviour
         if (index == 2 && !destinationQueue.isEmpty())
-                this.currentFloor = destinationQueue.removeFirst();
+            if (!destinationQueue.isEmpty()){
+                Integer nextFloor = destinationQueue.removeFirst();
+                if (nextFloor > this.currentFloor) {
+                    this.direction = Direction.UP;
+                } else if (nextFloor < this.currentFloor) {
+                    this.direction = Direction.DOWN;
+                } else {
+                    this.direction = Direction.IDLE;
+                }
+            this.currentFloor = nextFloor;
+            } else {
+                this.direction = Direction.IDLE;
+            }
     }
 
 
