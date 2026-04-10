@@ -21,6 +21,8 @@ public class Main {
         final int msBetweenSteps = Config.getInt("steps.delay");
         final int floorNumber = Config.getInt("hotel.floors.number");
         final int elevatorQuantity = Config.getInt("hotel.elevator.quantity");
+        final int crazyElevatorQuantity = Config.getInt("hotel.crazy-elevator.quantity");
+
 
         List<Floor> floors = new ArrayList<>();
         for (int i = 0; i < floorNumber; i++){
@@ -30,6 +32,9 @@ public class Main {
         List<Elevator> elevators = new ArrayList<>();
         for (int i = 1; i <= elevatorQuantity; i++){
             elevators.add(new Elevator(i, 0, elevatorCapacity));
+        }
+        for (int i = 1; i <= crazyElevatorQuantity; i++){
+            elevators.add(new CrazyElevator(i, 0, elevatorCapacity));
         }
 
         Hotel hotel = new Hotel(floors, elevators);

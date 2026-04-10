@@ -25,4 +25,26 @@ Modification de la méthode generateTargetFloor() dans Person.java : on sélecti
 ##### 2.4.1 :
 Il est difficile de tester la méthode isFull() car la capacité de l'ascenceur est modulable. SI on augmente la capacité de l'ascenceur, il peut être difficile de tester le cas 'true', car il faudrait instancier un grand nombre de Personnes pour tester ce cas, personnes qui doivent avoir un étage de départ. Le test, une fois écrit, ne s'adapte pas à la capacité modulable de l'ascenceur.
 
-#####
+##### 2.4.2 :
+
+##### 2.4.3 :
+
+
+
+
+### 2.5 : Crazy Elevator
+##### 2.5.1 :
+Classe Crazy Elevator créée, qui hérite de la classe Elevator.
+
+##### 2.5.2 :
+Override de la méthode move() de Elevator pour implémenter les trois cas.
+
+##### 2.5.3 :
+Override de la méthode unloadPassengers(Floor floor).
+
+##### 2.5.4 :
+Override de la méthode isFull().
+
+##### 2.5.5 :
+Ajout d'un paramètre "crazy-elevator/quantity" au fichier application.yml.
+Ajout du crazy elevator dans la liste des ascenceurs de l'hotel dans le Main.java.
