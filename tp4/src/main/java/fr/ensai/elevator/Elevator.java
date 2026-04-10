@@ -51,6 +51,16 @@ public class Elevator {
     }
 
     /**
+     * Checks if the elevator is full
+     * 
+     * @return boolean
+     */
+    public boolean isFull(){
+        return capacity == passengers.size();
+    }
+
+
+    /**
      * Checks if the elevator has the specified floor in its destination queue.
      * 
      * @param floorNumber the floor to check
@@ -128,12 +138,10 @@ public class Elevator {
      * @param floor the Floor where passengers board the elevator
      */
     public void loadPassengers(Floor floor) {
-
-        while (this.passengers.size() < this.capacity) {
+        while (!isFull()) {
             Person person = floor.boardNextPerson();
             if (person == null)
                 break;
-
             logger.info("Floor {}: {}{} enter Elevator {}",
                     floor.getNumber(),
                     person.getNickname(),
