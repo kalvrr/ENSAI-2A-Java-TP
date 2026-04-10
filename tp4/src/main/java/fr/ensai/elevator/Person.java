@@ -40,7 +40,7 @@ public class Person {
     }
 
     /**
-     * Generates a random target floor.
+     * Generates a random target floor among all, excluding the person's startFloor.
      * 
      * @return the target floor number
      */

@@ -6,6 +6,12 @@ hotel:
   elevator:
     capacity: 3
     quantity: 2
+  crazy-elevator:
+    stationary-probability: 1/3
+    skip-destination-probability: 1/3
+    normal-behaviour-probability: 1/3
+    deny-unloading-probability: 1/2
+    quantity: 1
   floors:
     number: 4
   spawn-probability:
