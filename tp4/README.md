@@ -15,7 +15,8 @@ ajout d'un Config.getInt pour récupérer le nombre d'étages
 implémentation de isFull() dans Elevator.java, et utilisation de la nouvelle méthode dans loadPassengers
 
 ### 2.2 : Request an elevator
-
+Modification de la méthode requestElevator dans Floor.java
+On ajoute Isontheway pour vérifier si un ascenseur est déjà en route auquel cas appuyer sur le bouton ne fait rien, sinon l'ascenceur avec la plus petite liste de destination est envoyé.
 
 #####
 #####
