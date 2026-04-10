@@ -59,7 +59,6 @@ public class Elevator {
         return capacity == passengers.size();
     }
 
-
     /**
      * Checks if the elevator has the specified floor in its destination queue.
      * 
@@ -149,6 +148,15 @@ public class Elevator {
                     this.id);
             this.passengers.add(person);
             this.addDestination(person.getTargetFloor());
+        }
+    }
+
+    /**
+     * Directly adds a list of people to the passengers of the elevator. 
+     */
+    public void spawnPassengers(List<Person> people){
+        for (Person person : people){
+            this.passengers.add(person);
         }
     }
 
