@@ -51,3 +51,11 @@ Override de la méthode isFull().
 ##### 2.5.5 :
 Ajout d'un paramètre "crazy-elevator/quantity" au fichier application.yml.
 Ajout du crazy elevator dans la liste des ascenceurs de l'hotel dans le Main.java.
+
+### 2.6 : Elevator Direction
+##### 2.6.1 :
+On définit l'attribut direction comme un enum : il définit les 3 cas possibles (up/down/idle).
+On l'ajoute aux paramètres de Person, Elevator et on l'étend à CrazyElevator.
+
+##### 2.6.2 :
+On met à jour la direction dans la méthode move() de Elevator (et de CrazyElevator).

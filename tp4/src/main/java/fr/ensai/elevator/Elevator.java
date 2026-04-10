@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 /**
  * Represents an elevator in a hotel simulation.
  * <p>
@@ -19,12 +20,19 @@ public class Elevator {
 
     public static final Logger logger = LogManager.getLogger(Elevator.class);
 
+    public enum Direction {
+        UP,
+        DOWN,
+        IDLE
+    }
+
     protected int id;
     protected int capacity;
     protected int currentFloor;
     protected List<Integer> destinationQueue;
     protected List<Person> passengers;
     protected List<Person> lastUnloaded;
+    protected Direction direction;
 
     /**
      * Constructs a new Elevator with the specified parameters.
@@ -40,6 +48,7 @@ public class Elevator {
         this.destinationQueue = new ArrayList<>();
         this.passengers = new ArrayList<>();
         this.lastUnloaded = new ArrayList<>();
+        this.direction = Direction.IDLE;
     }
 
     public int getId() {
@@ -162,11 +171,23 @@ public class Elevator {
 
     /**
      * Moves the elevator to the next floor in its destination queue.
-     * Removes that floor from the queue.
+     * Removes that floor from the queue. 
+     * ajout 
      */
     public void move() {
-        if (!destinationQueue.isEmpty())
-            this.currentFloor = destinationQueue.removeFirst();
+        if (!destinationQueue.isEmpty()){
+            Integer nextFloor = destinationQueue.removeFirst();
+            if (nextFloor > this.currentFloor) {
+                this.direction = Direction.UP;
+            } else if (nextFloor < this.currentFloor) {
+                this.direction = Direction.DOWN;
+            } else {
+                this.direction = Direction.IDLE;
+            }
+        this.currentFloor = nextFloor;
+        } else {
+            this.direction = Direction.IDLE;
+        }
     }
 
     /**

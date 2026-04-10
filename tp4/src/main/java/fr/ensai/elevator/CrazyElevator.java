@@ -13,7 +13,7 @@ public class CrazyElevator extends Elevator {
 
     // Constructeur
     public CrazyElevator(int id, int capacity, int currentFloor) {
-        super(id, capacity, currentFloor);
+        super(id, capacity, currentFloor, direction);
     }
 
     /**

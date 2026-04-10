@@ -7,10 +7,16 @@ import java.util.Random;
  * Represents a person in the hotel elevator simulation.
  */
 public class Person {
+    public enum Direction {
+        UP,
+        DOWN,
+        IDLE
+    }
 
     private String nickname;
     private int startFloor;
     private int targetFloor;
+    private Direction direction;
 
     private static final String CHARS = "abcdefghijklmnopqrstuvwxyz";
     private static int NEXT_CHAR_INDEX = 0;
@@ -26,6 +32,7 @@ public class Person {
         this.nickname = Person.generateNickname();
         this.startFloor = startFloor;
         this.targetFloor = this.generateTargetFloor();
+        this.direction = Direction.IDLE;
     }
 
     /**
