@@ -172,7 +172,11 @@ public class Elevator {
     /**
      * Moves the elevator to the next floor in its destination queue.
      * Removes that floor from the queue. 
-     * ajout 
+     * 
+     * Ajout pour la question 2.6.2 : 
+     * pour déterminer la direction on compare la position actuelle de 
+     * l'ascenseur avec sa position cible pour determiner le sens grace a une inégalité
+     * on doit aussi avoir une direction qui ne correspond ni a haut ni a bas pour le cas où l'ascenseur n'a pas de destination.
      */
     public void move() {
         if (!destinationQueue.isEmpty()){
