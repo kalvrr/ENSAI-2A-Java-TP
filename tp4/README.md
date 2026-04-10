@@ -55,7 +55,7 @@ Ajout du crazy elevator dans la liste des ascenceurs de l'hotel dans le Main.jav
 ### 2.6 : Elevator Direction
 ##### 2.6.1 :
 On définit l'attribut direction comme un enum : il définit les 3 cas possibles (up/down/idle). Il est créé dans le fichier Direction.java.
-On l'ajoute aux paramètres de Person, Elevator et on l'étend à CrazyElevator. On ajoute des getter (getDirection) à Person et Elevator.
+On l'ajoute aux paramètres de Person et Elevator. On ajoute des getter (getDirection) à Person et Elevator.
 Dans le constructeur de Elevator, on initialise l'attribut direction à "idle". Dans le constructeur de Person, on compare le target floor et le start floor pour déterminer le statut up/down.
 
 ##### 2.6.2 :
